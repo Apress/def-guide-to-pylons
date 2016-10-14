@@ -1,0 +1,3 @@
+include customobjects/config/deployment.ini_tmpl
+recursive-include customobjects/public *
+recursive-include customobjects/templates *

@@ -1,0 +1,4 @@
+Starting server in PID 6944.
+serving on http://127.0.0.1:5000
+Logged with the 'logtest.controllers.log' log
+Shutting down threadpool

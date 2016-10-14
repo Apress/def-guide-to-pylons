@@ -1,0 +1,9 @@
+setup.cfg
+setup.py
+SimpleSiteTemplate.egg-info/PKG-INFO
+SimpleSiteTemplate.egg-info/SOURCES.txt
+SimpleSiteTemplate.egg-info/dependency_links.txt
+SimpleSiteTemplate.egg-info/entry_points.txt
+SimpleSiteTemplate.egg-info/not-zip-safe
+SimpleSiteTemplate.egg-info/top_level.txt
+simplesitetemplate/__init__.py

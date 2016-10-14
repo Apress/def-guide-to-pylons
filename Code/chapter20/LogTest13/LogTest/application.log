@@ -1,0 +1,2 @@
+13:23:26,339 INFO  [sqlalchemy.engine] SELECT * FROM test;
+13:23:27,804 INFO  [paste.httpserver.ThreadPool] Shutting down threadpool

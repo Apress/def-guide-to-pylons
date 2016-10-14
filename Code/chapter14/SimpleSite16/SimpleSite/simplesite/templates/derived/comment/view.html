@@ -1,0 +1,10 @@
+<%inherit file="/base/index.html"/>
+
+<%def name="title()">Comment</%def>
+<%def name="heading()"><h1>Comment</h1></%def>
+
+${c.comment.content}
+
+<p><em>Posted by ${c.comment.name} on ${c.comment.created.strftime('%c')}.</em></p>
+<p><a href="${h.url_for(controller='page', action='view', id=c.comment.pageid)}">Visit the page this comment was posted on.</a></p>
+

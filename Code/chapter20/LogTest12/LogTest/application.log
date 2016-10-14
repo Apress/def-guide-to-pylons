@@ -1,0 +1,2 @@
+13:12:31,770 INFO  [logtest.controllers.log.other] This message will be logged
+13:12:33,110 INFO  [paste.httpserver.ThreadPool] Shutting down threadpool

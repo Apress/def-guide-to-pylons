@@ -1,0 +1,12 @@
+Starting server in PID 29644.
+serving on http://127.0.0.1:5000
+00:28:34,847 ERROR [logtest.controllers.log] My third Pylons log message!
+/media/disk/Pylons Book/Code/chapter20/LogTest02/LogTest/logtest/controllers/log.py changed; reloading...
+Starting server in PID 29660.
+serving on http://127.0.0.1:5000
+00:28:49,555 WARNI [logtest.controllers.log] My third Pylons log message!
+/media/disk/Pylons Book/Code/chapter20/LogTest02/LogTest/logtest/controllers/log.py changed; reloading...
+Starting server in PID 29674.
+serving on http://127.0.0.1:5000
+00:28:58,586 DEBUG [logtest.controllers.log] Another log message
+00:29:00,854 INFO  [paste.httpserver.ThreadPool] Shutting down threadpool

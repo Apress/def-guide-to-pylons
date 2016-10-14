@@ -1,0 +1,2 @@
+11:58:42,890 ERROR [logtest.controllers.log] The error 'Wrong Number' occurred with a value of 5.
+11:58:46,920 INFO  [paste.httpserver.ThreadPool] Shutting down threadpool

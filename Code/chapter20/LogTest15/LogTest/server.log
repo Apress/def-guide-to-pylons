@@ -1,0 +1,4 @@
+Starting server in PID 8765.
+serving on http://127.0.0.1:5000
+A message logged to the authkit logger
+Shutting down threadpool

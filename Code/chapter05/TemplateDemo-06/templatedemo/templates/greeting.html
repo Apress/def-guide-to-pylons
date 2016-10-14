@@ -1,0 +1,18 @@
+<%namespace name="nav" file="/navigation.html" />
+
+<html>
+<head>
+    <title>Greetings</title>
+</head>
+<body>
+    <h1>Greetings</h1>
+
+    ${nav.navigation_links('Ben', links=[
+        ('James','http://jimmyg.org'),
+        ('Ben','http://groovie.org'),
+        ('Philip',''),
+    ])}
+
+    <p>${c.greeting} ${c.name}!</p>
+</body>
+</html>

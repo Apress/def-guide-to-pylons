@@ -1,0 +1,3 @@
+include stream/config/deployment.ini_tmpl
+recursive-include stream/public *
+recursive-include stream/templates *

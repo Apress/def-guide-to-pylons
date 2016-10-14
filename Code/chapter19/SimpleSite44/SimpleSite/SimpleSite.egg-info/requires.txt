@@ -1,0 +1,11 @@
+Pylons>=0.9.7,<=0.9.7.99
+SQLAlchemy>=0.5,<=0.5.99
+Mako>=0.2.2,<=0.2.99
+FormBuild>=2.0.1,<=2.0.99
+AuthKit>=0.4.3,<=0.4.99
+
+[PostgreSQL]
+psycopg2
+
+[MySQL]
+mysql-python>=1.2

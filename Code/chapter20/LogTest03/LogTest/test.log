@@ -1,0 +1,4 @@
+Starting server in PID 29840.
+serving on http://127.0.0.1:5000
+00:31:57,571 ERROR [logtest.controllers.log] The error 'Wrong Number' occurred with a value of 5.
+00:31:59,263 INFO  [paste.httpserver.ThreadPool] Shutting down threadpool

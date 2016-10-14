@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: SimpleSiteTemplate
+Version: 0.1dev
+Summary: A Paste Template which allows you to create a new Pylons project based on the SimpleSite tutorial described in the Pylons Book
+Home-page: http://pylonsbook.com
+Author: James Gardner
+Author-email: feeback@pylonsbook.com
+License: BSD
+Description: UNKNOWN
+Keywords: Pylons Paste Template SimpleSite Simple Site Website
+Platform: UNKNOWN

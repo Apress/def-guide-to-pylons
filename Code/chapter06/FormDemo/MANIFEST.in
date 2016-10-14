@@ -1,0 +1,3 @@
+include formdemo/config/deployment.ini_tmpl
+recursive-include formdemo/public *
+recursive-include formdemo/templates *

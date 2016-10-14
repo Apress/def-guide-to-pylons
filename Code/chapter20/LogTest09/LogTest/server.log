@@ -1,0 +1,4 @@
+Starting server in PID 6701.
+serving on http://127.0.0.1:5000
+Logged with the 'logtest.controllers.log.other' logger
+Logged with the 'logtest.controllers.log' log

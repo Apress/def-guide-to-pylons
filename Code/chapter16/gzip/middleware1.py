@@ -1,0 +1,45 @@
+import gzip
+import StringIO
+
+# CAUTION: This doesn't work correctly yet
+
+class GzipMiddleware(object):
+    def __init__(self, app, compresslevel=9):
+        self.app = app
+        self.compresslevel = compresslevel
+
+    def __call__(self, environ, start_response):
+        buffer = StringIO.StringIO()
+        output = gzip.GzipFile(
+            mode='wb',
+            compresslevel=self.compresslevel,
+            fileobj=buffer
+        )
+        app_iter = self.app(environ, start_response)
+        for line in app_iter:
+            output.write(line)
+        if hasattr(app_iter, 'close'):
+            app_iter.close()
+        output.close()
+        buffer.seek(0)
+        result = buffer.getvalue()
+        buffer.close()
+        return [result]
+
+# This isn't included in the text but will allow you to test the examples at
+# http://localhost:8000/
+
+def app(environ, start_response):
+    start_response('200 OK', [('Content-type','text/plain')])
+    return ['Hello World!']
+
+app = GzipMiddleware(app)
+
+if __name__ == '__main__':
+    from wsgiref import simple_server
+    httpd = simple_server.WSGIServer(
+        ('0.0.0.0', 8000),
+        simple_server.WSGIRequestHandler,
+    )
+    httpd.set_app(app)
+    httpd.serve_forever()

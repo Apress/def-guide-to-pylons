@@ -1,0 +1,9 @@
+Starting server in PID 29332.
+serving on http://127.0.0.1:5000
+00:20:57,754 DEBUG [logtest.controllers.log] My first Pylons log message!
+
+/media/disk/Pylons Book/Code/chapter20/LogTest01/LogTest/logtest/controllers/log.pyc changed; reloading...
+Starting server in PID 29352.
+serving on http://127.0.0.1:5000
+00:21:13,320 DEBUG [logtest.controllers.log] Logged from the 'newlog' action
+00:21:17,120 INFO  [paste.httpserver.ThreadPool] Shutting down threadpool

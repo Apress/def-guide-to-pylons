@@ -1,0 +1,94 @@
+from {{package}}.tests import *
+from routes import url_for
+from {{package}}.model import meta
+from urlparse import urlparse
+
+class TestPageController(TestController):
+
+    def test_save_prohibit_get(self):
+        """Tests to ensure that GET requests are prohibited"""
+        response = self.app.get(
+            url=url_for(controller='page', action='save', id='1'),
+            params={
+                'heading': u'Updated Heading',
+                'title': u'Updated Title',
+                'content': u'Updated Content',
+            },
+            status = 405
+        )
+
+    def test_save_404_invalid_id(self):
+        """Tests that a 404 response is returned if no ID is specified
+        or if the ID doesn't exist"""
+        response = self.app.post(
+            url=url_for(controller='page', action='save', id=''),
+            params={
+               'heading': u'Updated Heading',
+               'title': u'Updated Title',
+               'content': u'Updated Content',
+            },
+            status=404
+        )
+        response = self.app.post(
+            url=url_for(controller='page', action='save', id='2'),
+            params={
+                'heading': u'Updated Heading',
+                'title': u'Updated Title',
+                'content': u'Updated Content',
+            },
+            status=404
+        )
+
+    def test_save_invalid_form_data(self):
+        """Tests that invalid data results in the form being returned with
+        error messages"""
+        response = self.app.post(
+            url=url_for(controller='page', action='save', id='1'),
+            params={
+                'heading': u'Updated Heading',
+                # title is required so this next entry is invalid
+                'title': u'',
+                'content': u'Updated Content',
+            }
+        )
+        assert 'Please enter a value' in response
+
+    def test_save(self):
+        """Tests that valid data is saved to the database, that the response redirects
+        to the view() action and that a flash message is set in the session"""
+
+        response = self.app.post(
+            url=url_for(controller='page', action='save', id='1'),
+            params={
+                'heading': u'Updated Heading',
+                'title': u'Updated Title',
+                'content': u'Updated Content',
+            }
+        )
+
+        # Test the data is saved in the database (we use the engine API to
+        # ensure that all the data really has been saved and isn't being returned
+        # from the session)
+        connection = meta.engine.connect()
+        result = connection.execute(
+            """
+            SELECT heading, title, content
+            FROM page
+            WHERE id=?
+            """,
+            (1,)
+        )
+        connection.close()
+        row = result.fetchone()
+        assert row.heading == u'Updated Heading'
+        assert row.title == u'Updated Title'
+        assert row.content == u'Updated Content'
+
+        # Test the flash message is set in the session
+        assert response.session['flash'] == 'Page successfully updated.'
+
+        # Check the respone will redirect to the view action
+        assert urlparse(response.response.location).path == url_for(
+            controller='page', action='view', id=1)
+        assert response.status == 302
+

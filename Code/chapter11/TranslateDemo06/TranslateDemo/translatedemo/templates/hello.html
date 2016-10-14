@@ -1,0 +1,19 @@
+<%!
+    from pylons.i18n.translation import set_lang, get_lang
+%>
+<html>
+<head>
+    <title>Multiple Translations</title>
+</head>
+<body>
+    <h1>Multiple Translations</h1>
+    <p>
+        Default: ${_(u'Hello!')}<br />
+        % for lang in ['fr','en','es']:
+            <% set_lang(lang) %>
+            ${get_lang()}: ${_(u'Hello!')}<br />
+        % endfor
+    </p>
+</body>
+</html>
+

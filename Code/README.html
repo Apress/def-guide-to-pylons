@@ -1,0 +1,918 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.5: http://docutils.sourceforge.net/" />
+<title>The Definitive Guide to Pylons</title>
+<meta name="date" content="2008-11-10" />
+<meta name="author" content="James Gardner" />
+<style type="text/css">
+
+/*
+:Author: David Goodger (goodger@python.org)
+:Id: $Id: html4css1.css 5196 2007-06-03 20:25:28Z wiemann $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left {
+  clear: left }
+
+img.align-right {
+  clear: right }
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font-family: serif ;
+  font-size: 100% }
+
+pre.literal-block, pre.doctest-block {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+</head>
+<body>
+<div class="document" id="the-definitive-guide-to-pylons">
+<h1 class="title">The Definitive Guide to Pylons</h1>
+<table class="docinfo" frame="void" rules="none">
+<col class="docinfo-name" />
+<col class="docinfo-content" />
+<tbody valign="top">
+<tr><th class="docinfo-name">Date:</th>
+<td>2008-11-10</td></tr>
+<tr><th class="docinfo-name">Author:</th>
+<td>James Gardner</td></tr>
+</tbody>
+</table>
+<div class="section" id="index-to-the-source-code-examples">
+<h1>Index to the Source Code Examples</h1>
+<p>I've tested every example in the book (apart from Chapters 10, 13 and 17 which
+Apress reviewed on my behalf) and copied the working code at each step into the
+examples you see in this index. I've also reported any problems and the
+required corrections to Apress so what you see in these examples should match
+exactly what is in the book. I hope you find them useful!</p>
+<p>These 164 examples were generated with Pylons 0.9.7rc2, SQLAlchemy 0.5rc1 andi
+the development versions of their required dependencies. They have been
+developed in such a way that they should also work with the release versions
+too but it is possible that things will change between now and when you test
+the examples for yourself. If you have difficulties try comparing your version
+to the version here for clues. You can do that with this command:</p>
+<pre class="literal-block">
+$ diff -ur MyCodeDirectory YourCodeDirectory
+</pre>
+<p>If you still have problems visit the Pylons Book site at <a class="reference external" href="http://pylonsbook.com">http://pylonsbook.com</a>
+for updates or ask on the Pylons mailing list. We have a friendly community and
+I'm sure someone will be happy to help you.</p>
+<p>All the source code is licensed under a BSD license so you can use it in your
+own projects. Some of the examples also include YUI which is licensed
+separately. The licenses are at the end of this file.</p>
+<div class="section" id="chapter-1">
+<h2>Chapter 1</h2>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">CGI</span></tt></dt>
+<dd>The example CGI script and config file</dd>
+</dl>
+</div>
+<div class="section" id="chapter-2">
+<h2>Chapter 2</h2>
+<p>No examples.</p>
+</div>
+<div class="section" id="chapter-3">
+<h2>Chapter 3</h2>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">HelloWorld</span></tt></dt>
+<dd>The empty project as a starting point.</dd>
+<dt><tt class="docutils literal"><span class="pre">HelloWorld-01</span></tt></dt>
+<dd>Contains the <tt class="docutils literal"><span class="pre">index.html</span></tt> file for generating Figure 3-1 and the hello
+controller <tt class="docutils literal"><span class="pre">index()</span></tt> action for testing the message and generating the HTTP
+request and response information for Figures 3-2 and 3-3.</dd>
+<dt><tt class="docutils literal"><span class="pre">HelloWorld-02</span></tt></dt>
+<dd>Contains extra routes so that the application be served from <tt class="docutils literal"><span class="pre">/</span></tt> an so
+that the <tt class="docutils literal"><span class="pre">view()</span></tt> action can be tested.</dd>
+<dt><tt class="docutils literal"><span class="pre">HelloWorld-03</span></tt></dt>
+<dd>Contains the code to test the counter via <tt class="docutils literal"><span class="pre">app_globals</span></tt> and the helper to
+generate the text version of the environment print out.</dd>
+</dl>
+</div>
+<div class="section" id="chapter-4">
+<h2>Chapter 4</h2>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">HelloWorld-04</span></tt></dt>
+<dd>Contains the extra <tt class="docutils literal"><span class="pre">debugger()</span></tt> action to test the Pylons interactive
+debugger.</dd>
+<dt><tt class="docutils literal"><span class="pre">HelloWorld-05</span></tt></dt>
+<dd>Disabling the debugger to send an email error report. You'll need to set
+your own email address in <tt class="docutils literal"><span class="pre">development.ini</span></tt> to test this example.</dd>
+</dl>
+</div>
+<div class="section" id="chapter-5">
+<h2>Chapter 5</h2>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">TemplateDemo</span></tt></dt>
+<dd>The empty template project</dd>
+<dt><tt class="docutils literal"><span class="pre">TemplateDemo-01</span></tt></dt>
+<dd>Contains the simple template to generate the <tt class="docutils literal"><span class="pre">Hello</span> <span class="pre">Pylons</span> <span class="pre">Developer!</span></tt>
+greeting shown in Figure 5-1.</dd>
+<dt><tt class="docutils literal"><span class="pre">TemplateDemo-02</span></tt></dt>
+<dd>The same example, but using the updated code using the <tt class="docutils literal"><span class="pre">c</span></tt> global and
+<tt class="docutils literal"><span class="pre">strcit_c</span></tt> option.</dd>
+<dt><tt class="docutils literal"><span class="pre">TempalteDemo-03</span></tt></dt>
+<dd>Same as before but updated to include a <tt class="docutils literal"><span class="pre">basic()</span></tt> action which renders
+the <tt class="docutils literal"><span class="pre">basic.html</span></tt> template with various examples of basic Mako syntax.</dd>
+<dt><tt class="docutils literal"><span class="pre">TempalteDemo-04</span></tt></dt>
+<dd>Adds the improved greeting message with the current URL and the context
+example.</dd>
+<dt><tt class="docutils literal"><span class="pre">TemplateDemo-05</span></tt></dt>
+<dd>Dynamically generates the greeting based on the query string. Also includes
+a <tt class="docutils literal"><span class="pre">filters()</span></tt> action to test some of the filters.</dd>
+<dt><tt class="docutils literal"><span class="pre">TemplateDemo-06</span></tt></dt>
+<dd>Uses a namespace to generate the navigation links for the <tt class="docutils literal"><span class="pre">greeting()</span></tt>
+action and uses the body def for a greeting and time example in the
+<tt class="docutils literal"><span class="pre">greeting_and_time()</span></tt> action.</dd>
+<dt><tt class="docutils literal"><span class="pre">TemplateDemo-07</span></tt></dt>
+<dd>Uses an inheritance chain to generate the template used by the
+<tt class="docutils literal"><span class="pre">greeting()</span></tt> action.</dd>
+<dt><tt class="docutils literal"><span class="pre">TemplateDemo-08</span></tt></dt>
+<dd>Uses three templates in an inheritance chain and the <tt class="docutils literal"><span class="pre">next</span></tt> namespace
+to render the navigation links when the <tt class="docutils literal"><span class="pre">greeting()</span></tt> action is called.</dd>
+<dt><tt class="docutils literal"><span class="pre">TemplateDemo-09</span></tt></dt>
+<dd>Uses the <tt class="docutils literal"><span class="pre">parent</span></tt> namespace to create a customized title.</dd>
+<dt><tt class="docutils literal"><span class="pre">TemplateDemo-10</span></tt></dt>
+<dd>Uses caching so that the page is only generated every 5 seconds.</dd>
+<dt><tt class="docutils literal"><span class="pre">GenshiTemplateDemo</span></tt></dt>
+<dd>An empty project where Genshi was chosen as the templating language
+during generation.</dd>
+</dl>
+</div>
+<div class="section" id="chapter-6">
+<h2>Chapter 6</h2>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">FormDemo</span></tt></dt>
+<dd>The empty FormDemo project</dd>
+<dt><tt class="docutils literal"><span class="pre">FormDemo-01</span></tt></dt>
+<dd>Uses a base template and a form to submit an email address and display the
+submitted value.</dd>
+<dt><tt class="docutils literal"><span class="pre">FormDemo-02</span></tt></dt>
+<dd>Uses an HTTP redirect to confirm the data was successfully submitted whilst
+avoiding the resubmitted data problem.</dd>
+<dt><tt class="docutils literal"><span class="pre">FormDemo-03</span></tt></dt>
+<dd>Uses helpers to generate the form.</dd>
+<dt><tt class="docutils literal"><span class="pre">FormDemo-04</span></tt></dt>
+<dd>File upload and download.</dd>
+<dt><tt class="docutils literal"><span class="pre">FormDemo-05</span></tt></dt>
+<dd>Manual validation and error message generation.</dd>
+<dt><tt class="docutils literal"><span class="pre">FormDemo-06</span></tt></dt>
+<dd>Using FormEncode to validate the form.</dd>
+<dt><tt class="docutils literal"><span class="pre">FormDemo-07</span></tt></dt>
+<dd>Using HTMLFill to re-populate the form.</dd>
+<dt><tt class="docutils literal"><span class="pre">FormDemo-08</span></tt></dt>
+<dd>Using the <tt class="docutils literal"><span class="pre">&#64;validate</span></tt> decorator.</dd>
+<dt><tt class="docutils literal"><span class="pre">FormExample</span></tt></dt>
+<dd>The empty FormExample project.</dd>
+<dt><tt class="docutils literal"><span class="pre">FormExample-01</span></tt></dt>
+<dd>Repeating fields example using a reseach study theme.</dd>
+</dl>
+</div>
+<div class="section" id="chapter-7">
+<h2>Chapter 7</h2>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">filesystem</span></tt></dt>
+<dd>Contains an example Pylons project using the filesystem functions, an
+interactive session similar to the one described in the book and the
+<tt class="docutils literal"><span class="pre">size_to_human()</span></tt> helper. There are also some tests of the functionality.</dd>
+<dt><tt class="docutils literal"><span class="pre">S3</span></tt></dt>
+<dd>Contains the example for uploading and downloading a file from Amazon S3
+using <tt class="docutils literal"><span class="pre">boto</span></tt>.</dd>
+<dt><tt class="docutils literal"><span class="pre">example01</span></tt></dt>
+<dd>Contains the <tt class="docutils literal"><span class="pre">engine_test.py</span></tt> example which outputs <tt class="docutils literal"><span class="pre">username:</span> <span class="pre">foo</span></tt>.</dd>
+<dt><tt class="docutils literal"><span class="pre">example02</span></tt></dt>
+<dd>Adds the <tt class="docutils literal"><span class="pre">metadata_test.py</span></tt> example to output the table name and check
+that the <tt class="docutils literal"><span class="pre">page_table</span></tt> object can be obtained from the metadata. Also
+prints the columns being used.</dd>
+<dt><tt class="docutils literal"><span class="pre">example03</span></tt></dt>
+<dd>Adds an <tt class="docutils literal"><span class="pre">sqlexpression_test.py</span></tt> and <tt class="docutils literal"><span class="pre">alternative_sqlexpression_test.py</span></tt>
+examples.</dd>
+<dt><tt class="docutils literal"><span class="pre">sql_injection_attack.py</span></tt></dt>
+<dd>Contains code which will run the example SQL injection attack action.</dd>
+<dt><tt class="docutils literal"><span class="pre">example04</span></tt></dt>
+<dd>Selection example using the <tt class="docutils literal"><span class="pre">echo=True</span></tt> argument to <tt class="docutils literal"><span class="pre">create_engine()</span></tt>.</dd>
+<dt><tt class="docutils literal"><span class="pre">example05</span></tt></dt>
+<dd>Using a more complex <tt class="docutils literal"><span class="pre">WHERE</span></tt> clause with <tt class="docutils literal"><span class="pre">and</span></tt> and <tt class="docutils literal"><span class="pre">like</span></tt> operators.</dd>
+<dt><tt class="docutils literal"><span class="pre">example06</span></tt></dt>
+<dd>Using an <tt class="docutils literal"><span class="pre">ORDER</span> <span class="pre">BY</span></tt> clause.</dd>
+<dt><tt class="docutils literal"><span class="pre">example07</span></tt></dt>
+<dd>Updating and deleting records.</dd>
+<dt><tt class="docutils literal"><span class="pre">example08</span></tt></dt>
+<dd>Using a model and a session.</dd>
+<dt><tt class="docutils literal"><span class="pre">example09</span></tt></dt>
+<dd>Using the declarative API for the model.</dd>
+</dl>
+</div>
+<div class="section" id="chapter-8">
+<h2>Chapter 8</h2>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">SimpleSite01</span></tt></dt>
+<dd>Create a skeleton SimpleSite project.</dd>
+<dt><tt class="docutils literal"><span class="pre">SimpleSite02</span></tt></dt>
+<dd>Remove the <tt class="docutils literal"><span class="pre">public/index.html</span></tt> file, add a page controller and create a
+simple <tt class="docutils literal"><span class="pre">view()</span></tt> action.</dd>
+<dt><tt class="docutils literal"><span class="pre">SimpleSite03</span></tt></dt>
+<dd>Adding the template structure and a simple <tt class="docutils literal"><span class="pre">view()</span></tt> template.</dd>
+<dt><tt class="docutils literal"><span class="pre">Simplesite04</span></tt></dt>
+<dd>Adding the model and updating the <tt class="docutils literal"><span class="pre">websetup.py</span></tt> file to create the
+database.</dd>
+<dt><tt class="docutils literal"><span class="pre">SimpleSite05</span></tt></dt>
+<dd>Using the home page data from the database to populate the view template</dd>
+<dt><tt class="docutils literal"><span class="pre">SimpleSite06</span></tt></dt>
+<dd>Updated the <tt class="docutils literal"><span class="pre">view()</span></tt> action to handle pages which don't exist. Also added
+a <tt class="docutils literal"><span class="pre">new()</span></tt> action and a <tt class="docutils literal"><span class="pre">fields.html</span></tt> template for creating and editing
+templates. Installing FormBuild and updating <tt class="docutils literal"><span class="pre">lib/helpers.py</span></tt> and
+<tt class="docutils literal"><span class="pre">setup.py</span></tt>. Adding the <tt class="docutils literal"><span class="pre">new.html</span></tt> template and the Routes <tt class="docutils literal"><span class="pre">url_for()</span></tt>
+function.</dd>
+<dt><tt class="docutils literal"><span class="pre">SimpleSite07</span></tt></dt>
+<dd>Added the <tt class="docutils literal"><span class="pre">create()</span></tt> action and the <tt class="docutils literal"><span class="pre">main.css</span></tt> stylesheet so pages can
+now be saved. Modified the base template to include the stylesheet.</dd>
+<dt><tt class="docutils literal"><span class="pre">SimpleSite08</span></tt></dt>
+<dd>Implementing the <tt class="docutils literal"><span class="pre">edit()</span></tt> and <tt class="docutils literal"><span class="pre">save()</span></tt> actions and the <tt class="docutils literal"><span class="pre">edit.html</span></tt>
+template.</dd>
+<dt><tt class="docutils literal"><span class="pre">SimpleSite09</span></tt></dt>
+<dd>Implementing the <tt class="docutils literal"><span class="pre">list()</span></tt> action and <tt class="docutils literal"><span class="pre">list.html</span></tt> template.</dd>
+<dt><tt class="docutils literal"><span class="pre">SimpleSite10</span></tt></dt>
+<dd>Adding the <tt class="docutils literal"><span class="pre">delete()</span></tt> action and updating the footer.</dd>
+<dt><tt class="docutils literal"><span class="pre">SimpleSite11</span></tt></dt>
+<dd>Adding the paginator.</dd>
+<dt><tt class="docutils literal"><span class="pre">SimpleSite12</span></tt></dt>
+<dd>Implementing the flash message, in the <tt class="docutils literal"><span class="pre">save()</span></tt> action the base template
+and by adding some extra styles.</dd>
+</dl>
+</div>
+<div class="section" id="chapter-9">
+<h2>Chapter 9</h2>
+<p>All examples are run from an interactive Python prompt.</p>
+</div>
+<div class="section" id="chapter-10">
+<h2>Chapter 10</h2>
+<p>No examples.</p>
+</div>
+<div class="section" id="chapter-11">
+<h2>Chapter 11</h2>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">TranslateDemo01</span></tt></dt>
+<dd>An empty Pylons project with a <tt class="docutils literal"><span class="pre">hello</span></tt> controller added.</dd>
+<dt><tt class="docutils literal"><span class="pre">TranslateDemo02</span></tt></dt>
+<dd>Add <tt class="docutils literal"><span class="pre">.pot</span></tt> and <tt class="docutils literal"><span class="pre">.po</span></tt> files and compile the Spanish translation to a
+<tt class="docutils literal"><span class="pre">.mo</span></tt> file. Test the example to use <tt class="docutils literal"><span class="pre">set_lang()</span></tt> to set the language
+to Spanish then print the localized string <tt class="docutils literal"><span class="pre">¡Hola!</span></tt>.</dd>
+<dt><tt class="docutils literal"><span class="pre">TranslateDemo03</span></tt></dt>
+<dd>Create French and English translations too. Use the <tt class="docutils literal"><span class="pre">set_lang()</span></tt> and
+<tt class="docutils literal"><span class="pre">get_lang()</span></tt> functions to change which translations are used dynamically,
+print French, English and Spanish translations in the same <tt class="docutils literal"><span class="pre">multiple()</span></tt>
+action.</dd>
+<dt><tt class="docutils literal"><span class="pre">TranslateDemo04</span></tt></dt>
+<dd>Updating the message catalog with the string <tt class="docutils literal"><span class="pre">&quot;Goodbye!&quot;</span></tt>.</dd>
+<dt><tt class="docutils literal"><span class="pre">TranslateDemo05</span></tt></dt>
+<dd>Using localisation in templates with the <tt class="docutils literal"><span class="pre">hello.html</span></tt> template.</dd>
+<dt><tt class="docutils literal"><span class="pre">TranslateDemo06</span></tt></dt>
+<dd>Enabling and customizing the Babel message extractors.</dd>
+<dt><tt class="docutils literal"><span class="pre">TranslateDemo07</span></tt></dt>
+<dd>Setting the default language in the config file's <tt class="docutils literal"><span class="pre">[app:main]</span></tt> section
+with <tt class="docutils literal"><span class="pre">lang</span> <span class="pre">=</span> <span class="pre">fr</span></tt>.</dd>
+<dt><tt class="docutils literal"><span class="pre">TranslateDemo08</span></tt></dt>
+<dd>Setting the language based on the user's session and the <tt class="docutils literal"><span class="pre">__before__()</span></tt>
+action.</dd>
+<dt><tt class="docutils literal"><span class="pre">TranslateDemo09</span></tt></dt>
+<dd>Setting the language based on the user's session and the <tt class="docutils literal"><span class="pre">BaseController</span></tt>
+<tt class="docutils literal"><span class="pre">__call__()</span></tt> method to affect every controller.</dd>
+<dt><tt class="docutils literal"><span class="pre">TranslateDemo10</span></tt></dt>
+<dd>Investigating fallback languages.</dd>
+<dt><tt class="docutils literal"><span class="pre">TranslateDemo11</span></tt></dt>
+<dd>Lazy translations.</dd>
+<dt><tt class="docutils literal"><span class="pre">TranslateDemo12</span></tt></dt>
+<dd>Plural forms.</dd>
+</dl>
+</div>
+<div class="section" id="chapter-12">
+<h2>Chapter 12</h2>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">test_maths01</span></tt></dt>
+<dd>Simple nose test script to test adding and subtracting.</dd>
+<dt><tt class="docutils literal"><span class="pre">test_maths02</span></tt></dt>
+<dd>Alternative use of <tt class="docutils literal"><span class="pre">AssertionError</span></tt>.</dd>
+<dt><tt class="docutils literal"><span class="pre">test_maths03</span></tt></dt>
+<dd>Causing a test failure.</dd>
+<dt><tt class="docutils literal"><span class="pre">test_maths04</span></tt></dt>
+<dd>Adding an assertion message.</dd>
+<dt><tt class="docutils literal"><span class="pre">test_maths05</span></tt></dt>
+<dd>Printing debug messages to <tt class="docutils literal"><span class="pre">sys.stdout</span></tt>.</dd>
+<dt><tt class="docutils literal"><span class="pre">SimpleSite13</span></tt></dt>
+<dd>Adding a test for the SimpleSite page controller's <tt class="docutils literal"><span class="pre">view()</span></tt> action and
+ammending it to include a check of the Pylons request object from the
+<tt class="docutils literal"><span class="pre">response.req</span></tt> object. Modifying the <tt class="docutils literal"><span class="pre">test.ini</span></tt> file to include logging
+information and running the test once to see that it accidentally adds an
+extra page.</dd>
+<dt><tt class="docutils literal"><span class="pre">SimpleSite14</span></tt></dt>
+<dd>Updating the <tt class="docutils literal"><span class="pre">test.ini</span></tt> file so it has its own configuration. Updating
+the <tt class="docutils literal"><span class="pre">websetup.py</span></tt> file so that when the <tt class="docutils literal"><span class="pre">test.ini</span></tt> file is run, the
+test database tables are dropped, losing all the data so that the tests
+can be run with a fresh database.</dd>
+<dt><tt class="docutils literal"><span class="pre">SimpleSite15</span></tt></dt>
+<dd>Testing the <tt class="docutils literal"><span class="pre">save()</span></tt> action. (You can also use this for the
+<tt class="docutils literal"><span class="pre">paster</span> <span class="pre">shell</span></tt> example.)</dd>
+<dt><tt class="docutils literal"><span class="pre">CustomObjects</span></tt></dt>
+<dd>How to add custom objects to the test <tt class="docutils literal"><span class="pre">response</span></tt> object.</dd>
+</dl>
+</div>
+<div class="section" id="chapter-13">
+<h2>Chapter 13</h2>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">emphasize</span></tt></dt>
+<dd>Contains a sample module and a doctest to test it.</dd>
+<dt><tt class="docutils literal"><span class="pre">hello</span></tt></dt>
+<dd>Create a sample reStructuredText document and generate an HTML file from
+it.</dd>
+<dt><tt class="docutils literal"><span class="pre">programatically</span></tt></dt>
+<dd>Generating HTML from reStructuredText using library calls.</dd>
+<dt><tt class="docutils literal"><span class="pre">SimpleSiteDocs1</span></tt></dt>
+<dd>Creating a sphinx build and generating a set of HTML documents.</dd>
+<dt><tt class="docutils literal"><span class="pre">SimpleSiteDocs2</span></tt></dt>
+<dd>Adding some sample files, updating the toctree.</dd>
+<dt><tt class="docutils literal"><span class="pre">SimpleSiteDocs3</span></tt></dt>
+<dd>Adding API documentation.</dd>
+<dt><tt class="docutils literal"><span class="pre">SimpleSiteDocs4</span></tt></dt>
+<dd>Autogenerating Documentation.</dd>
+<dt><tt class="docutils literal"><span class="pre">SimpleSiteDocs5</span></tt></dt>
+<dd>Syntax highlighting source code.</dd>
+</dl>
+</div>
+<div class="section" id="chapter-14">
+<h2>Chapter 14</h2>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">SimpleSite16</span></tt></dt>
+<dd>Using explicit routing and updating the page footer accordingly. Adding
+routes for a comment controller. Updating the <tt class="docutils literal"><span class="pre">list()</span></tt> action so the
+paginator works with the new routes. Creating a new comment controller and
+templates from the code used by the page controller and updating the
+<tt class="docutils literal"><span class="pre">fields.html</span></tt>, <tt class="docutils literal"><span class="pre">view.html</span></tt> and <tt class="docutils literal"><span class="pre">list.html</span></tt> templates. At this point
+you can generate Figure 14-1 yourself.</dd>
+<dt><tt class="docutils literal"><span class="pre">SimpleSite17</span></tt></dt>
+<dd>Adding a <tt class="docutils literal"><span class="pre">__before__()</span></tt> method to the comment controller. Updated the
+controller to use the <tt class="docutils literal"><span class="pre">c.page</span></tt> object created in the <tt class="docutils literal"><span class="pre">__before__()</span></tt>
+method and modified the comment <tt class="docutils literal"><span class="pre">view.html</span></tt> template to contain Edit and
+Delete links.</dd>
+<dt><tt class="docutils literal"><span class="pre">SimpleSite18</span></tt></dt>
+<dd>Adding the comment count to the page view, changing the cascade behaviour
+so that comments are deleted when pages are.</dd>
+<dt><tt class="docutils literal"><span class="pre">SimpleSite19</span></tt></dt>
+<dd>Dealing with tags. Creating the new controller and updating the templates.</dd>
+<dt><tt class="docutils literal"><span class="pre">SimpleSite20</span></tt></dt>
+<dd>Modifying the validators so that tags are unique, less than 20 characters
+long and only contain alphanumerics and the space character.</dd>
+<dt><tt class="docutils literal"><span class="pre">SimpleSite21</span></tt></dt>
+<dd>Loading and saving tags correctly as well as handling their deletion.</dd>
+<dt><tt class="docutils literal"><span class="pre">SimpleSite22</span></tt></dt>
+<dd>Creating a navigation hierachy, updating the model, creating the nav table,
+updating <tt class="docutils literal"><span class="pre">websetup.py</span></tt> and creating a new database.</dd>
+<dt><tt class="docutils literal"><span class="pre">SimpleSite23</span></tt></dt>
+<dd>Adding a nav controller and validators and adding a section controller
+and templates. Adding nav validators and then section validators which
+inherit them. Also adding shared fields for the section and page forms.
+At this point you can create Figure 14-6.</dd>
+<dt><tt class="docutils literal"><span class="pre">SimpleSite24</span></tt></dt>
+<dd>Updating the model so that the <tt class="docutils literal"><span class="pre">Nav</span></tt> class has a
+<tt class="docutils literal"><span class="pre">add_navigation_node()</span></tt> static method. Setting up the section controller.</dd>
+<dt><tt class="docutils literal"><span class="pre">SimpleSite25</span></tt></dt>
+<dd>Setting up the page controller</dd>
+<dt><tt class="docutils literal"><span class="pre">SimpleSite26</span></tt></dt>
+<dd>Changing the routing and updating the page and section controllers
+accordingly. Create the page and section not found templates.</dd>
+<dt><tt class="docutils literal"><span class="pre">SimpleSite27</span></tt></dt>
+<dd>Adding the navigation components to the templates.</dd>
+<dt><tt class="docutils literal"><span class="pre">SimpleSite28</span></tt></dt>
+<dd>Adding some style.</dd>
+</dl>
+</div>
+<div class="section" id="chapter-15">
+<h2>Chapter 15</h2>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">SimpleSite29</span></tt></dt>
+<dd>Add the YUI library files to the project and setting up the reset, fonts
+and grids CSS.</dd>
+<dt><tt class="docutils literal"><span class="pre">SimpleSite30</span></tt></dt>
+<dd>Adding animation.</dd>
+<dt><tt class="docutils literal"><span class="pre">SimpleSite31</span></tt></dt>
+<dd>Adding Ajax with a <tt class="docutils literal"><span class="pre">.innerHTML</span></tt> replacement.</dd>
+<dt><tt class="docutils literal"><span class="pre">SimpleSite32</span></tt></dt>
+<dd>Transferring the section values via JSON.</dd>
+</dl>
+</div>
+<div class="section" id="chapter-16">
+<h2>Chapter 16</h2>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">WSGITest01</span></tt></dt>
+<dd>Contains a simple controller and action used in the example comparing a
+WSGI application to a Pylons action.</dd>
+<dt><tt class="docutils literal"><span class="pre">hello</span></tt></dt>
+<dd>Contains three Hello World! WSGI applications, one written as a function,
+one using the writable object from <tt class="docutils literal"><span class="pre">start_response()</span></tt> and  the other as
+a class.</dd>
+<dt><tt class="docutils literal"><span class="pre">application</span></tt></dt>
+<dd>Contains a WSGI application class with multiple methods</dd>
+<dt><tt class="docutils literal"><span class="pre">WSGITest02</span></tt></dt>
+<dd>A WSGI application as a Pylons controller</dd>
+<dt><tt class="docutils literal"><span class="pre">run_with_cgi</span></tt></dt>
+<dd>Contains the <tt class="docutils literal"><span class="pre">wsgi_test.py</span></tt> application to test the <tt class="docutils literal"><span class="pre">run_with_cgi()</span></tt>
+server implementation.</dd>
+<dt><tt class="docutils literal"><span class="pre">hello_server</span></tt></dt>
+<dd>Contains a sample served with the <tt class="docutils literal"><span class="pre">wsgiref</span></tt> module.</dd>
+<dt><tt class="docutils literal"><span class="pre">middleware/enviorn.py</span></tt></dt>
+<dd>Middleware component which adds a message to the environment.</dd>
+<dt><tt class="docutils literal"><span class="pre">middleware/error.py</span></tt></dt>
+<dd>Error handling middleware.</dd>
+<dt><tt class="docutils literal"><span class="pre">middleware/cookie.py</span></tt></dt>
+<dd>Cookie-setting middleware.</dd>
+<dt><tt class="docutils literal"><span class="pre">gzip</span></tt></dt>
+<dd>Contains the steps involved in writing a piece of middleware which alters
+the response.</dd>
+<dt><tt class="docutils literal"><span class="pre">SimpleSite33</span></tt></dt>
+<dd>Adding <tt class="docutils literal"><span class="pre">GzipMiddleware</span></tt> to the SimpleSite application.</dd>
+</dl>
+</div>
+<div class="section" id="chapter-17">
+<h2>Chapter 17</h2>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">entry_points</span></tt></dt>
+<dd>Loading the Pylons installer for the SimpleSite application from the entry
+point.</dd>
+<dt><tt class="docutils literal"><span class="pre">SimpleSite34</span></tt></dt>
+<dd>Adding the Gzip filter app factory and entry point</dd>
+<dt><tt class="docutils literal"><span class="pre">SimpleSite35</span></tt></dt>
+<dd>Using an alternative form of the filter definition. Adding a filter
+function and entry point.</dd>
+<dt><tt class="docutils literal"><span class="pre">Stream</span></tt></dt>
+<dd>An example application which demonstrates streaming from a controller.</dd>
+<dt><tt class="docutils literal"><span class="pre">config</span></tt>, <tt class="docutils literal"><span class="pre">deploy</span></tt>, <tt class="docutils literal"><span class="pre">registry</span></tt>, <tt class="docutils literal"><span class="pre">pylons</span></tt></dt>
+<dd>Further examples</dd>
+</dl>
+</div>
+<div class="section" id="chapter-18">
+<h2>Chapter 18</h2>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">AuthTest01</span></tt></dt>
+<dd>Testing a private method.</dd>
+<dt><tt class="docutils literal"><span class="pre">AuthTest02</span></tt></dt>
+<dd>A homegrown authentication system using Pylons' <tt class="docutils literal"><span class="pre">__before__()</span></tt> method.</dd>
+<dt><tt class="docutils literal"><span class="pre">AuthDemo01</span></tt></dt>
+<dd>Triggering a sign in by returning a 401 response.</dd>
+<dt><tt class="docutils literal"><span class="pre">AuthDemo02</span></tt></dt>
+<dd>Modifying the <tt class="docutils literal"><span class="pre">private()</span></tt> action to respond to the <tt class="docutils literal"><span class="pre">REMOTE_USER</span></tt>
+environment variable.</dd>
+<dt><tt class="docutils literal"><span class="pre">AuthDemo03</span></tt></dt>
+<dd>Testing the UserIn permission</dd>
+<dt><tt class="docutils literal"><span class="pre">AuthDemo04</span></tt></dt>
+<dd>Using the authorisation middleware.</dd>
+<dt><tt class="docutils literal"><span class="pre">AuthDemo05</span></tt></dt>
+<dd>Using the <tt class="docutils literal"><span class="pre">authorized()</span></tt> function.</dd>
+<dt><tt class="docutils literal"><span class="pre">AuthDemo06</span></tt></dt>
+<dd>Triggering a Sign In by returning a 401 response.</dd>
+<dt><tt class="docutils literal"><span class="pre">AuthDemo07</span></tt></dt>
+<dd>Triggering a Sign In by raising a <tt class="docutils literal"><span class="pre">NotAuthenticatedError</span></tt>.</dd>
+<dt><tt class="docutils literal"><span class="pre">AuthDemo08</span></tt></dt>
+<dd>Protecting a whole controller with an <tt class="docutils literal"><span class="pre">&#64;authorize</span></tt> decorator on
+<tt class="docutils literal"><span class="pre">__before__()</span></tt>.</dd>
+<dt><tt class="docutils literal"><span class="pre">permissions</span></tt></dt>
+<dd>Various permission objects you can create.</dd>
+<dt><tt class="docutils literal"><span class="pre">AuthDemo09</span></tt></dt>
+<dd>Adding groups and roles.</dd>
+<dt><tt class="docutils literal"><span class="pre">AuthDemo10</span></tt></dt>
+<dd>Setting cookie params.</dd>
+<dt><tt class="docutils literal"><span class="pre">AuthDemo11</span></tt></dt>
+<dd>Using digest authentication.</dd>
+<dt><tt class="docutils literal"><span class="pre">AuthDemo12</span></tt></dt>
+<dd>Disabling AuthKit in the test setup.</dd>
+<dt><tt class="docutils literal"><span class="pre">AuthDemo13</span></tt></dt>
+<dd>Using an SSL certificate.</dd>
+<dt><tt class="docutils literal"><span class="pre">AuthDemo14</span></tt></dt>
+<dd>Encrypted passwords.</dd>
+</dl>
+</div>
+<div class="section" id="chapter-19">
+<h2>Chapter 19</h2>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">SimpleSite36</span></tt></dt>
+<dd>Add the AuthKit configuration to the config file, modify <tt class="docutils literal"><span class="pre">websetup.py</span></tt>
+and protect the <tt class="docutils literal"><span class="pre">edit()</span></tt> action.</dd>
+<dt><tt class="docutils literal"><span class="pre">SimpleSite37</span></tt></dt>
+<dd>Protect the <tt class="docutils literal"><span class="pre">save()</span></tt> action, create the <tt class="docutils literal"><span class="pre">lib/auth.py</span></tt> file and use the
+updated auth helpers to protect the <tt class="docutils literal"><span class="pre">edit()</span></tt>, <tt class="docutils literal"><span class="pre">save()</span></tt> and <tt class="docutils literal"><span class="pre">delete()</span></tt>
+actions.</dd>
+<dt><tt class="docutils literal"><span class="pre">SimpleSite38</span></tt></dt>
+<dd>Updating the page footer to hide the Edit Page link if you aren't signed
+in. Creating the account controller and templates, modifying the base
+template to contain the username and a sign out link in the top right.</dd>
+<dt><tt class="docutils literal"><span class="pre">SimpleSite39</span></tt></dt>
+<dd>Implementing a custom sign in template and testing the permissions.</dd>
+<dt><tt class="docutils literal"><span class="pre">SimpleSite40</span></tt></dt>
+<dd>Implementing the rest of the permissions checks and updating the page
+footer. Using the paster shell to customise users, modifying the error
+documents.</dd>
+<dt><tt class="docutils literal"><span class="pre">SimpleSite41</span></tt></dt>
+<dd>Customising the 403 response and adding a <tt class="docutils literal"><span class="pre">signinagain()</span></tt> action</dd>
+<dt><tt class="docutils literal"><span class="pre">SimpleSite42</span></tt></dt>
+<dd>Adding a WYSIWYG interface, setting up the JavaScript, using the sam
+skin theme, adding the styles.</dd>
+<dt><tt class="docutils literal"><span class="pre">SimpleSite43</span></tt></dt>
+<dd>Adding metadata to <tt class="docutils literal"><span class="pre">setup.py</span></tt>, configuring <tt class="docutils literal"><span class="pre">setup.cfg</span></tt> and adding the
+AuthKit options to <tt class="docutils literal"><span class="pre">config/deployment.ini_tmpl</span></tt>.</dd>
+<dt><tt class="docutils literal"><span class="pre">SimpleSite44</span></tt></dt>
+<dd>Remove the static files we don't need, add the license information to the
+<tt class="docutils literal"><span class="pre">README.txt</span></tt> file and to <tt class="docutils literal"><span class="pre">public/yui/2.6.0</span></tt> and register the package
+on the cheeseshop, uploading the files.</dd>
+<dt><tt class="docutils literal"><span class="pre">SimpleSiteTemplate01</span></tt></dt>
+<dd>Create a new project template.</dd>
+<dt><tt class="docutils literal"><span class="pre">SimpleSiteTemplate02</span></tt></dt>
+<dd>Add the SimpleSite files. Removing the ones you don't want.</dd>
+<dt><tt class="docutils literal"><span class="pre">SimpleSiteTemplate03</span></tt></dt>
+<dd>Update the project to ask for an <tt class="docutils literal"><span class="pre">sqlalchemy_url</span></tt> variable.</dd>
+<dt><tt class="docutils literal"><span class="pre">SimpleSiteTemplate04</span></tt></dt>
+<dd>Replacing the variables and uploading the finished project.</dd>
+</dl>
+</div>
+<div class="section" id="chapter-20">
+<h2>Chapter 20</h2>
+<p>In each of the LogTest examples, the output from running the examples can be
+seen in the <tt class="docutils literal"><span class="pre">test.log</span></tt>, <tt class="docutils literal"><span class="pre">server.log</span></tt> or <tt class="docutils literal"><span class="pre">application.log</span></tt> files. For
+each new example I deleted the old version of the file so you can see the
+output from just that example.</p>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">LogTest01</span></tt></dt>
+<dd>Demonstrating server and application logs with the Paste HTTP Server in
+development mode logging to a file.</dd>
+<dt><tt class="docutils literal"><span class="pre">LogTest02</span></tt></dt>
+<dd>Logging at a <tt class="docutils literal"><span class="pre">ERROR</span></tt> and <tt class="docutils literal"><span class="pre">WARNING</span></tt> levels and using a numerical value
+rather than a named level.</dd>
+<dt><tt class="docutils literal"><span class="pre">LogTest03</span></tt></dt>
+<dd>Variables in log messages.</dd>
+<dt><tt class="docutils literal"><span class="pre">LogTest04</span></tt></dt>
+<dd>Logging from templates.</dd>
+<dt><tt class="docutils literal"><span class="pre">LogTest05</span></tt></dt>
+<dd>Sending application logs to application.log by configuring a handler in
+<tt class="docutils literal"><span class="pre">development.ini</span></tt> and sending the server logs to <tt class="docutils literal"><span class="pre">server.log</span></tt>. Note
+that <tt class="docutils literal"><span class="pre">application.log</span></tt> also contains some message logged by the Paste
+HTTP Server because it is actually using Python application log system
+to log some server messages!</dd>
+<dt><tt class="docutils literal"><span class="pre">LogTest06</span></tt></dt>
+<dd>Logging messages directly to the server logs with the <tt class="docutils literal"><span class="pre">wsgi.errors</span></tt>
+stream.</dd>
+<dt><tt class="docutils literal"><span class="pre">LogTest07</span></tt></dt>
+<dd>Using the Pylons <tt class="docutils literal"><span class="pre">WSGIErrorHandler</span></tt> to log messages to the
+<tt class="docutils literal"><span class="pre">wsgi.errors</span></tt> stream.</dd>
+<dt><tt class="docutils literal"><span class="pre">LogTest08</span></tt></dt>
+<dd>Controlling proagation in the <tt class="docutils literal"><span class="pre">[logger_logtest]</span></tt> section.</dd>
+<dt><tt class="docutils literal"><span class="pre">LogTest09</span></tt></dt>
+<dd>Using an alternative logger in the configuration and watching it propagate.</dd>
+<dt><tt class="docutils literal"><span class="pre">LogTest10</span></tt></dt>
+<dd>Controlling propagation via loggers - the <tt class="docutils literal"><span class="pre">debug()</span></tt> message is filtered.</dd>
+<dt><tt class="docutils literal"><span class="pre">LogTest11</span></tt></dt>
+<dd>Updating the <tt class="docutils literal"><span class="pre">other_logger</span></tt> to use a <tt class="docutils literal"><span class="pre">warning()</span></tt> which is logged.</dd>
+<dt><tt class="docutils literal"><span class="pre">LogTest12</span></tt></dt>
+<dd>Proving that propagated messages aren't filtered.</dd>
+<dt><tt class="docutils literal"><span class="pre">LogTest13</span></tt></dt>
+<dd>Logging SQLAlchemy messages via propagation.</dd>
+<dt><tt class="docutils literal"><span class="pre">LogTest14</span></tt></dt>
+<dd>Logging AuthKit messages via a handler.</dd>
+<dt><tt class="docutils literal"><span class="pre">LogTest15</span></tt></dt>
+<dd>Logging AuthKit messages via a handler and using propagation.</dd>
+<dt><tt class="docutils literal"><span class="pre">LogTest16</span></tt></dt>
+<dd>Generating the <tt class="docutils literal"><span class="pre">production.ini</span></tt> file.</dd>
+</dl>
+</div>
+<div class="section" id="chapter-21">
+<h2>Chapter 21</h2>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">VirtualPython</span></tt></dt>
+<dd>Contains the bash script I ran to set up the virtual Python environment.</dd>
+<dt><tt class="docutils literal"><span class="pre">InstallSoftware</span></tt></dt>
+<dd>Contains the patches I had to make to install the pre-release versions of
+the software referred to in the book.</dd>
+<dt><tt class="docutils literal"><span class="pre">embedding</span></tt></dt>
+<dd>Contains a <tt class="docutils literal"><span class="pre">wsgi_app.py</span></tt> example which loads the Pylons WSGI application.</dd>
+</dl>
+</div>
+<div class="section" id="license">
+<h2>License</h2>
+<p>All the code (apart from YUI) is licensed under the BSD license:</p>
+<p>Copyright (c) 2008, 3aims Ltd
+All rights reserved.</p>
+<p>Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:</p>
+<blockquote>
+<ul class="simple">
+<li>Redistributions of source code must retain the above copyright
+notice, this list of conditions and the following disclaimer.</li>
+<li>Redistributions in binary form must reproduce the above
+copyright notice, this list of conditions and the following disclaimer
+in the documentation and/or other materials provided with the
+distribution.</li>
+<li>Neither the name of the 3aims Ltd nor the names of its contributors
+may be used to endorse or promote products derived from this software
+without specific prior written permission.</li>
+</ul>
+</blockquote>
+<p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot; AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
+<p>YUI is licensed as follows:</p>
+<p>Copyright (c) 2008, Yahoo! Inc.
+All rights reserved.</p>
+<p>Redistribution and use of this software in source and binary forms, with or
+without modification, are permitted provided that the following conditions are
+met:</p>
+<blockquote>
+<ul class="simple">
+<li>Redistributions of source code must retain the above copyright notice,
+this list of conditions and the following disclaimer.</li>
+<li>Redistributions in binary form must reproduce the above copyright notice,
+this list of conditions and the following disclaimer in the documentation
+and/or other materials provided with the distribution.</li>
+<li>Neither the name of Yahoo! Inc. nor the names of its contributors may be
+used to endorse or promote products derived from this software without
+specific prior written permission of Yahoo! Inc.</li>
+</ul>
+</blockquote>
+<p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot; AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
+</div>
+</div>
+</div>
+</body>
+</html>

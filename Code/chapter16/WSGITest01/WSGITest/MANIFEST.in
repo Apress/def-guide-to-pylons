@@ -1,0 +1,3 @@
+include wsgitest/config/deployment.ini_tmpl
+recursive-include wsgitest/public *
+recursive-include wsgitest/templates *

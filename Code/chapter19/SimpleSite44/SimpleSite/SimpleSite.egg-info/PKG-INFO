@@ -1,0 +1,46 @@
+Metadata-Version: 1.0
+Name: SimpleSite
+Version: 0.3.0
+Summary: A simple website application written as a demonstration of Pylons for the Definitive Guide to Pylons
+Home-page: http://pylonsbook.com
+Author: James Gardner
+Author-email: feeback@pylonsbook.com
+License: BSD, YUI licensed separately at http://developer.yahoo.com/yui/license.html
+Description: ++++++++++
+        SimpleSite
+        ++++++++++
+        
+        A simple website application allowing WYSIWYG editing, sections and
+        subsections and full navigation widgets. The idea is that the application can
+        form a starting point for your own website projects.
+        
+        Installation
+        ============
+        
+        First install Easy Install if you don't have it already by downloading
+        ``ez_setup.py`` from http://peak.telecommunity.com/dist/ez_setup.py and
+        installing it like this::
+        
+        python ez_setup.py
+        
+        Install SimpleSite like this specifying either MySQL, SQLite or PostgreSQL
+        as the word within the square brackets depending on the database you intend to
+        use::
+        
+        easy_install SimpleSite["MySQL"]
+        paster make-config simplesite.ini
+        
+        Configure the application by editing ``simplesite.ini`` to specify a database
+        to use using the format described at
+        http://www.sqlalchemy.org/docs/05/dbengine.html#dbengine_supported ::
+        
+        paster setup-app simplesite.ini
+        paster serve simplesite.ini
+        
+        The running application will now be available at http://localhost/
+        
+        Files
+        =====
+        
+Keywords: pylons simple site book example
+Platform: UNKNOWN

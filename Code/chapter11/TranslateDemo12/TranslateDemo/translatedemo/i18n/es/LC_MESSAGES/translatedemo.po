@@ -1,0 +1,36 @@
+# Spanish translations for TranslateDemo.
+# Copyright (C) 2008 James Gardner
+# This file is distributed under the same license as the TranslateDemo
+# project.
+# James Gardner <feedback@pylonsbook.com>, 2008.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: TranslateDemo 0.1\n"
+"Report-Msgid-Bugs-To: feedback@pylonsbook.com\n"
+"POT-Creation-Date: 2008-11-03 15:56+0000\n"
+"PO-Revision-Date: 2008-11-03 18:54+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 0.9.4\n"
+
+#: translatedemo/controllers/hello.py:24
+#, python-format
+msgid "There is %(num)d person here"
+msgid_plural "There are %(num)d people here"
+msgstr[0] "Hay %(num)d persona aquí"
+msgstr[1] "Hay %(num)d personas aquí"
+
+#: translatedemo/controllers/hello.py:36 translatedemo/templates/hello.html:11
+#: translatedemo/templates/hello.html:14
+msgid "Hello!"
+msgstr "¡Hola!"
+
+#: translatedemo/controllers/hello.py:48
+msgid "Goodbye!"
+msgstr "¡Adiós!"
+

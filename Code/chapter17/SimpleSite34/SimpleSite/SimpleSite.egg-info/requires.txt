@@ -1,0 +1,4 @@
+Pylons>=0.9.7rc2
+SQLAlchemy>=0.5rc2
+Mako
+FormBuild>=2.0,<=2.99

@@ -1,0 +1,3 @@
+12:51:01,558 WARNI [logtest.controllers.log.other] Logged with the 'logtest.controllers.log.other' logger
+12:51:01,558 INFO  [logtest.controllers.log] Logged with the 'logtest.controllers.log' log
+12:51:03,367 INFO  [paste.httpserver.ThreadPool] Shutting down threadpool

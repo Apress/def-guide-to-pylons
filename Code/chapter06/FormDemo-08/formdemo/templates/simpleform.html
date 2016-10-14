@@ -1,0 +1,10 @@
+<%inherit file="/base.html" />
+<h1>Enter Your E-mail Address</h1>
+
+${h.form(h.url_for(controller='formtest', action='submit'), method='get')}
+<p>E-mail Address: ${h.text('email')}</p>
+<p>Date:           ${h.text('date')}</p>
+<p>                ${h.submit('submit', 'Submit')}</p>
+${h.end_form()}
+</form>
+

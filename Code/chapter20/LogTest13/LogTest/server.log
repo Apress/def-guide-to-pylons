@@ -1,0 +1,4 @@
+Starting server in PID 8491.
+serving on http://127.0.0.1:5000
+SELECT * FROM test;
+Shutting down threadpool

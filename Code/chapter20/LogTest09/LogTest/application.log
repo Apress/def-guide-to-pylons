@@ -1,0 +1,2 @@
+12:12:02,078 INFO  [logtest.controllers.log.other] Logged with the 'logtest.controllers.log.other' logger
+12:12:02,079 INFO  [logtest.controllers.log] Logged with the 'logtest.controllers.log' log

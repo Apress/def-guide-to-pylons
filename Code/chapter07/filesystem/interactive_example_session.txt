@@ -1,0 +1,24 @@
+$ ~/env/bin/python
+Python 2.5.2 (r252:60911, Jul 31 2008, 17:28:52) 
+[GCC 4.2.3 (Ubuntu 4.2.3-2ubuntu7)] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import os
+>>> os.stat('foo.png')
+(33216, 508L, 2097L, 1, 1000, 0, 4841L, 1225625497, 1225625444, 1225625444)
+>>> statinfo = os.stat('foo.png')
+>>> statinfo
+(33216, 508L, 2097L, 1, 1000, 0, 4841L, 1225625497, 1225625444, 1225625444)
+>>> statinfo.st_size
+4841L
+>>> statinfo[7]
+1225625497
+>>> import datetime, time
+>>> modified = datetime.datetime.fromtimestamp(statinfo[7])
+>>> modified
+datetime.datetime(2008, 11, 2, 11, 31, 37)
+>>> modified.strftime("%Y-%m-%dT%H:%M:%S")
+'2008-11-02T11:31:37'
+>>> from webhelpers.date import time_ago_in_words
+>>> time_ago_in_words(modified)
+'12 minutes and 4 seconds'
+

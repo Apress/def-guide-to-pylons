@@ -1,0 +1,3 @@
+include authdemo/config/deployment.ini_tmpl
+recursive-include authdemo/public *
+recursive-include authdemo/templates *
